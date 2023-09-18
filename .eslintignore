@@ -1,0 +1,12 @@
+# Config files
+**/*.config.js
+**/*.config.mjs
+# Misc
+.env
+.next
+.github
+.next
+node_modules
+*.log
+
+*.lockb
