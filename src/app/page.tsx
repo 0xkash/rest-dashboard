@@ -1,6 +1,6 @@
 export default function Index() {
   return (
-    <main className="flex min-h-screen flex-col p-6">
+    <main className="container flex min-h-screen flex-col py-6">
       <p className="text-lg">Index page</p>
     </main>
   )

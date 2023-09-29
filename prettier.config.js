@@ -4,7 +4,7 @@ const config = {
   singleQuote: false,
   tabWidth: 2,
   trailingComma: "es5",
-  plugins: [require.resolve('prettier-plugin-tailwindcss')],
+  plugins: [require.resolve("prettier-plugin-tailwindcss")],
   importOrder: [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
@@ -29,6 +29,6 @@ const config = {
   importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
   importOrderMergeDuplicateImports: true,
   importOrderCombineTypeAndValueImports: true,
-};
+}
 
-module.exports = config;
+module.exports = config
