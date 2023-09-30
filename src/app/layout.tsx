@@ -9,6 +9,7 @@ import { FontSans } from "@/config/theme"
 import ThemeProvider from "@/components/theme-provider"
 
 import Header from "@/components/layout/header"
+import Footer from "@/components/layout/footer"
 
 export const metadata: Metadata = {
   title: {
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <div className="flex min-h-screen flex-col">
             <Header />
             <div className="flex-1">{children}</div>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
