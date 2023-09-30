@@ -18,41 +18,43 @@ import { NavigationItem } from "@/config/menu-items"
 
 export default function Navigation({ items }: { items: NavigationItem[] }) {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        {items.map((item) =>
-          item.items ? (
-            <NavigationMenuItem key={item.title}>
-              <NavigationMenuTrigger>
-                {item.icon && <span>{item.icon}</span>}
-                {item.title}
-              </NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                  {item.items.map((subitem) => (
-                    <ListItem
-                      key={subitem.title}
-                      title={subitem.title}
-                      icon={subitem.icon}
-                      href={subitem.href as string}
-                      description={subitem.description}
-                    />
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          ) : (
-            <NavigationMenuItem key={item.title}>
-              <Link href={item.href as string} legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+    <div className="hidden md:block">
+      <NavigationMenu>
+        <NavigationMenuList>
+          {items.map((item) =>
+            item.items ? (
+              <NavigationMenuItem key={item.title}>
+                <NavigationMenuTrigger>
+                  {item.icon && <span>{item.icon}</span>}
                   {item.title}
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-          )
-        )}
-      </NavigationMenuList>
-    </NavigationMenu>
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {item.items.map((subitem) => (
+                      <ListItem
+                        key={subitem.title}
+                        title={subitem.title}
+                        icon={subitem.icon}
+                        href={subitem.href as string}
+                        description={subitem.description}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            ) : (
+              <NavigationMenuItem key={item.title}>
+                <Link href={item.href as string} legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {item.title}
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            )
+          )}
+        </NavigationMenuList>
+      </NavigationMenu>
+    </div>
   )
 }
 

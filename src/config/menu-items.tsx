@@ -1,5 +1,5 @@
 import { ReactNode } from "react"
-import { PlusSquare, Table } from "lucide-react"
+import { PlusSquare, Star, Table } from "lucide-react"
 
 export type NavigationItem = {
   title: string
@@ -47,6 +47,7 @@ export const navigation: NavigationItem[] = [
       {
         title: "Saved Properties",
         href: "#",
+        icon: <Star className="h-4 w-4" />,
         description: "A list of all properties that have been saved by you.",
       },
     ],
