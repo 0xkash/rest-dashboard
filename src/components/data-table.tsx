@@ -36,6 +36,8 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
+import { Payment } from "@/types"
+
 const data: Payment[] = [
   {
     id: "m5gr84i9",
@@ -68,13 +70,6 @@ const data: Payment[] = [
     email: "carmella@hotmail.com",
   },
 ]
-
-export type Payment = {
-  id: string
-  amount: number
-  status: "pending" | "processing" | "success" | "failed"
-  email: string
-}
 
 export const columns: ColumnDef<Payment>[] = [
   {
@@ -163,6 +158,13 @@ export const columns: ColumnDef<Payment>[] = [
     },
   },
 ]
+
+interface DataTableProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data: any[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  columns: ColumnDef<any>[]
+}
 
 export function DataTable() {
   const [sorting, setSorting] = useState<SortingState>([])
